@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Train a small machine-learning model to sort colors."
+        />
+        <title>Color Sorter | ml5.js</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://unpkg.com/ml5@1/dist/ml5.js"></script>
+        <script type="module" src="js/script.js"></script>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>Color Sorter</h1>
+                <p>
+                    Train a model with RGB numbers, then sort new colors and see
+                    how its predictions compare with yours.
+                </p>
+            </header>
+
+            <section class="panel" aria-labelledby="training-title">
+                <h2 id="training-title">1. Train the model</h2>
+                <button id="train-button" type="button">Train model</button>
+                <p id="training-status" role="status">Ready to train.</p>
+            </section>
+
+            <section id="game-panel" class="panel" aria-labelledby="game-title">
+                <div class="game-heading">
+                    <div>
+                        <h2 id="game-title">2. Sort the colors</h2>
+                        <p>
+                            Drag each swatch into a bin, or select it and choose
+                            a bin.
+                        </p>
+                    </div>
+                    <p id="progress" aria-live="polite">Sorted: 0 / 10</p>
+                </div>
+
+                <div class="sorting-area">
+                    <section class="pile" aria-labelledby="pile-title">
+                        <h3 id="pile-title">Color pile</h3>
+                        <div id="color-pile" class="swatches"></div>
+                    </section>
+                    <div id="color-bins" class="bins" role="group" aria-label="Color bins">
+                        <section class="bin" data-color="red" aria-labelledby="bin-red">
+                            <h3 id="bin-red">Red</h3>
+                            <div class="swatches"></div>
+                        </section>
+                        <section class="bin" data-color="green" aria-labelledby="bin-green">
+                            <h3 id="bin-green">Green</h3>
+                            <div class="swatches"></div>
+                        </section>
+                        <section class="bin" data-color="blue" aria-labelledby="bin-blue">
+                            <h3 id="bin-blue">Blue</h3>
+                            <div class="swatches"></div>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="game-controls">
+                    <button id="check-button" type="button" disabled>
+                        Check with AI
+                    </button>
+                    <button
+                        id="new-round-button"
+                        type="button"
+                    >
+                        New round
+                    </button>
+                </div>
+                <p id="result" role="status">
+                    Train the model to enable AI checking. Sort the swatches in the meantime.
+                </p>
+            </section>
+        </main>
+    </body>
+</html>

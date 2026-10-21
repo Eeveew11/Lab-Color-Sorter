@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: #222;
+    font: 1rem/1.5 system-ui, sans-serif;
+}
+
+main {
+    width: min(100% - 2rem, 850px);
+    margin: 1rem auto;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0 0 0.5rem;
+}
+
+.panel {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 0.5rem 0.75rem;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+.game-heading,
+.game-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.sorting-area {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.pile,
+.bin {
+    min-width: 0;
+    padding: 0.75rem;
+    border: 1px dashed #888;
+}
+
+.bins {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+}
+
+.swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+    gap: 0.5rem;
+    min-height: 3rem;
+}
+
+.swatch {
+    min-height: 3rem;
+    padding: 0;
+}
+
+.swatch.selected {
+    outline: 3px solid #222;
+}
+
+.game-controls {
+    justify-content: flex-start;
+    margin-top: 1rem;
+}
+
+#result {
+    margin-top: 0.75rem;
+}
+
+@media (max-width: 600px) {
+    .sorting-area {
+        grid-template-columns: 1fr;
+    }
+
+    .game-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0;
+    }
+}
